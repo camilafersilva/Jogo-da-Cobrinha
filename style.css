@@ -19,3 +19,46 @@ body{
 canvas{
     background: #111;
 }
+.score{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.8rem;
+}
+.score--value{
+  font-weight: 700;
+  font-size: 4.5rem;
+  margin-top: -10px;
+  display: block;
+}
+.menu-screen{
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  align-items:  center;
+  z-index: 1;
+}
+.game-over{
+  text-transform:uppercase ;
+  font-weight: 700;
+  font-size: 3rem;
+}
+.final-score{
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.btn-play{
+  border: none;
+  padding: 10px 15px 10px 12px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 1rem;
+  color:#333;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items:center ;
+  gap:5px;
+  cursor: pointer;
+}

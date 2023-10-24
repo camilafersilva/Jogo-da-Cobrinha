@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
+
 <body>
-     <div class="score">score: <span class="score--value">00</span></div>
-      <div class="menu-screen">
+    <div class="score">score: <span class="score--value">00</span></div>
+    <div class="menu-screen">
         <span class="game-over">Game Over</span>
-        <span class="final-score"><span>00</span></span>
-        <button class="btn-play">Jogar Novamente</button>
-      </div>
+        <span class="final-score"><span class="final">00</span></span>
+        <button class="btn-play"><span class="material-symbols-outlined">
+                play_circle
+            </span>Jogar Novamente</button>
+    </div>
     <canvas width="600" height="600"></canvas>
     <script src="./snake.js"></script>
 </body>
+
 </html>

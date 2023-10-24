@@ -1,7 +1,11 @@
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 const size = 30;
-const snake = [
+const score=document.querySelector(".score--value");
+const finalScore=document.querySelector(".final");
+const menu=document.querySelector(".menu-screen");
+const buttonPlay=document.querySelector(".btn-play");
+let snake = [
     { x: 270, y: 240 },
 
 
@@ -16,6 +20,9 @@ const randomPosition = () => {
     return Math.round(number / 30) * 30
 }
 const food = { x: randomPosition(), y: randomPosition(), color: "red" }
+const incrementScore=()=>{
+ score.innerText=+score.innerText+10
+}
 const drawFood = () => {
     const { x, y, color } = food
     ctx.shadowColor = color
@@ -88,7 +95,7 @@ const checkEat = () => {
         }
         food.x = x
         food.y = y
-
+        incrementScore()
 
     }
 }
@@ -108,6 +115,9 @@ const checkCollision = () => {
 }
 const gameOver=()=>{
     direction=undefined
+    menu.style.display="flex"
+    finalScore.innertext=score.innerText
+    canvas.style.filter="blur(2px)"
 }
 const game = () => {
     clearInterval(loopId);
@@ -123,6 +133,15 @@ const game = () => {
     }, 300)}
 
 game();
+buttonPlay.addEventListener("click",()=>{
+    menu.style.display="none"
+    canvas.style.filter="none"
+    score.innerText="00"
+    snake = [
+        { x: 270, y: 240 },   
+    
+    ];
+})
 document.addEventListener('keydown', ({ key }) => {
     if (key == 'ArrowRight' && direction != "left") {
         direction = "right"
